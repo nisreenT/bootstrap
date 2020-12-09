@@ -36,7 +36,8 @@ jobs:
             ${{ runner.OS }}-node-v${{ env.NODE }}-
 
       - name: Install npm dependencies
-        run: npm ci
+        # TODO: switch back to `npm ci` when https://github.com/npm/cli/issues/1905 is fixed
+        run: npm install
 
       - name: Test docs
         run: npm run docs
